@@ -1,70 +1,51 @@
 import 'package:flutter/material.dart';
 
-class PantallaSeis extends StatefulWidget {
+class PantallaSeis extends StatelessWidget {
   const PantallaSeis({Key? key}) : super(key: key);
-
-  @override
-  State<PantallaSeis> createState() => _PantallaSeisState();
-}
-
-class _PantallaSeisState extends State<PantallaSeis> {
-  int _currentIndex = 0;
-
-  List<Widget> body = const [
-    Icon(Icons.home, size: 100),
-    Icon(Icons.menu, size: 100),
-    Icon(Icons.person, size: 100),
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Pantalla Seis',
-          style: TextStyle(
+          'Align',
+          style: const TextStyle(
             color: Color(0xff000000),
             fontSize: 25.0,
           ),
         ),
-        backgroundColor: const Color(0xffcbabff),
+        backgroundColor: Color(0xffffcb7b),
         centerTitle: true,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('¡Regresar!'),
+          SizedBox(
+            height: 30,
           ),
-          const SizedBox(height: 20),
           Center(
-            child: body[_currentIndex],
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('¡Regresar!'),
+            ),
           ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (int newIndex) {
-          setState(() {
-            _currentIndex = newIndex;
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home),
+          SizedBox(
+            height: 30,
           ),
-          BottomNavigationBarItem(
-            label: 'Menu',
-            icon: Icon(Icons.menu),
+          Center(
+            child: Container(
+              height: 120.0,
+              width: double.infinity,
+              color: Colors.blueGrey,
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: FlutterLogo(
+                  size: 60,
+                ),
+              ),
+            ),
           ),
-          BottomNavigationBarItem(
-            label: 'Profile',
-            icon: Icon(Icons.person),
-          )
         ],
       ),
     );

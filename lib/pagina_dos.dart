@@ -14,7 +14,7 @@ class _PantallaDosState extends State<PantallaDos> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Pantalla Dos',
+          'AboutDialog',
           style: const TextStyle(
             color: Color(0xff000000),
             fontSize: 25.0,
@@ -40,27 +40,24 @@ class _PantallaDosState extends State<PantallaDos> {
             height: 30,
           ),
           Center(
-              child: GestureDetector(
-            onTap: () {
-              setState(() {
-                selected = !selected;
-              });
-            },
-            child: Center(
-              child: Container(
-                width: double.infinity,
-                height: 250.0,
-                color: Color(0xffffc6ea),
-                child: AnimatedAlign(
-                  alignment:
-                      selected ? Alignment.topRight : Alignment.bottomLeft,
-                  duration: const Duration(seconds: 1),
-                  curve: Curves.fastOutSlowIn,
-                  child: const FlutterLogo(size: 50.0),
-                ),
-              ),
+            child: ElevatedButton(
+              child: Text('Mostrar AboutDialog'),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AboutDialog(
+                    applicationIcon: FlutterLogo(),
+                    applicationLegalese: 'Legalese',
+                    applicationName: 'Flutter App',
+                    applicationVersion: 'version 1.0.0',
+                    children: [
+                      Text('Este es un texto creado por fluttermap'),
+                    ],
+                  ),
+                );
+              },
             ),
-          )),
+          ),
         ],
       ),
     );

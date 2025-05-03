@@ -27,7 +27,7 @@ class PantallaUno extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/pantalla2');
             },
-            child: const Text('Ver Pantalla 2'),
+            child: const Text('Ver AboutDialog Widget'),
           )),
           SizedBox(
             height: 30,
@@ -37,7 +37,7 @@ class PantallaUno extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/pantalla3');
             },
-            child: const Text('Ver Pantalla 3'),
+            child: const Text('Ver AboutListTile Widget'),
           )),
           SizedBox(
             height: 30,
@@ -47,7 +47,7 @@ class PantallaUno extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/pantalla4');
             },
-            child: const Text('Ver Pantalla 4'),
+            child: const Text('Ver AbsorbPointer Widget'),
           )),
           SizedBox(
             height: 30,
@@ -57,7 +57,7 @@ class PantallaUno extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/pantalla5');
             },
-            child: const Text('Ver Pantalla 5'),
+            child: const Text('Ver AlertDialog Widget'),
           )),
           SizedBox(
             height: 30,
@@ -67,7 +67,7 @@ class PantallaUno extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/pantalla6');
             },
-            child: const Text('Ver Pantalla 6'),
+            child: const Text('Ver Align Widget'),
           )),
           SizedBox(
             height: 30,
@@ -77,7 +77,47 @@ class PantallaUno extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/pantalla7');
             },
-            child: const Text('Ver Pantalla 7'),
+            child: const Text('Ver AnimatedAlign'),
+          )),
+          SizedBox(
+            height: 30,
+          ),
+          Center(
+              child: ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/pantalla8');
+            },
+            child: const Text('Ver AnimatedBuilder'),
+          )),
+          SizedBox(
+            height: 30,
+          ),
+          Center(
+              child: ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/pantalla9');
+            },
+            child: const Text('Ver AnimatedContainer'),
+          )),
+          SizedBox(
+            height: 10,
+          ),
+          Center(
+              child: ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/pantalla10');
+            },
+            child: const Text('Ver AnimatedCrossFade'),
+          )),
+          SizedBox(
+            height: 0,
+          ),
+          Center(
+              child: ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/pantalla11');
+            },
+            child: const Text('Ver AnimatedDefaultTextStyle'),
           )),
         ],
       ),

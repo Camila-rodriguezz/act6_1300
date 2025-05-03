@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 
-class PantallaCuatro extends StatefulWidget {
+class PantallaCuatro extends StatelessWidget {
   const PantallaCuatro({Key? key}) : super(key: key);
 
-  @override
-  State<PantallaCuatro> createState() => _PantallaCuatroState();
-}
-
-class _PantallaCuatroState extends State<PantallaCuatro> {
-  double turns = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Pantalla Cuatro',
+          'AbsorbPointer',
           style: const TextStyle(
             color: Color(0xff000000),
             fontSize: 25.0,
           ),
         ),
-        backgroundColor: Color(0xffabfcff),
+        backgroundColor: Color(0xffffc9eb),
         centerTitle: true,
       ),
       body: Column(
@@ -36,28 +30,32 @@ class _PantallaCuatroState extends State<PantallaCuatro> {
               child: const Text('¡Regresar!'),
             ),
           ),
+          SizedBox(
+            height: 30,
+          ),
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Stack(
+              alignment: AlignmentDirectional.center,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(50),
-                  child: AnimatedRotation(
-                    turns: turns,
-                    duration: const Duration(seconds: 1),
-                    child: const FlutterLogo(
-                      size: 100,
-                    ),
+                SizedBox(
+                  width: 200.0,
+                  height: 100.0,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: null,
                   ),
                 ),
-                ElevatedButton(
-                  child: const Text('Rotar Logo'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orangeAccent,
+                SizedBox(
+                  width: 100.0,
+                  height: 200.0,
+                  child: AbsorbPointer(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          iconColor: Colors.blue.shade200),
+                      onPressed: () {},
+                      child: null,
+                    ),
                   ),
-                  onPressed: () {
-                    setState(() => turns += 1 / 4);
-                  },
                 ),
               ],
             ),

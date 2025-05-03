@@ -6,6 +6,10 @@ import 'package:rodriguezrutas/pagina_cuatro.dart';
 import 'package:rodriguezrutas/pagina_cinco.dart';
 import 'package:rodriguezrutas/pagina_seis.dart';
 import 'package:rodriguezrutas/pagina_siete.dart';
+import 'package:rodriguezrutas/pagina_ocho.dart';
+import 'package:rodriguezrutas/pagina_nueve.dart';
+import 'package:rodriguezrutas/pagina_diez.dart';
+import 'package:rodriguezrutas/pagina_once.dart';
 
 void main() => runApp(MiRutasApp());
 
@@ -26,6 +30,10 @@ class MiRutasApp extends StatelessWidget {
         '/pantalla5': (context) => const PantallaCinco(),
         '/pantalla6': (context) => const PantallaSeis(),
         '/pantalla7': (context) => const PantallaSiete(),
+        '/pantalla8': (context) => const PantallaOcho(),
+        '/pantalla9': (context) => const PantallaNueve(),
+        '/pantalla10': (context) => const PantallaDiez(),
+        '/pantalla11': (context) => const PantallaOnce(),
       },
     );
   }

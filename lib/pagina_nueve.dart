@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PantallaSiete extends StatefulWidget {
-  const PantallaSiete({Key? key}) : super(key: key);
+class PantallaNueve extends StatefulWidget {
+  const PantallaNueve({Key? key}) : super(key: key);
 
   @override
-  State<PantallaSiete> createState() => _PantallaSieteState();
+  State<PantallaNueve> createState() => _PantallaNueveState();
 }
 
-class _PantallaSieteState extends State<PantallaSiete> {
+class _PantallaNueveState extends State<PantallaNueve> {
   bool selected = false;
 
   @override
@@ -15,13 +15,13 @@ class _PantallaSieteState extends State<PantallaSiete> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'AnimatedAlign',
+          'AnimatedContainer',
           style: TextStyle(
             color: Color(0xff000000),
             fontSize: 25.0,
           ),
         ),
-        backgroundColor: Color(0xfff9ff99),
+        backgroundColor: Color(0xffa4ff65),
         centerTitle: true,
       ),
       body: Column(
@@ -43,18 +43,17 @@ class _PantallaSieteState extends State<PantallaSiete> {
               });
             },
             child: Center(
-              child: Container(
-                width: double.infinity,
-                height: 250.0,
-                color: Colors.blueGrey,
-                child: AnimatedAlign(
-                  alignment:
-                      selected ? Alignment.topRight : Alignment.bottomLeft,
-                  duration: Duration(seconds: 1),
-                  curve: Curves.fastOutSlowIn,
-                  child: FlutterLogo(
-                    size: 50.0,
-                  ),
+              child: AnimatedContainer(
+                width: selected ? 200.0 : 100.0,
+                height: selected ? 100.0 : 200.0,
+                color: selected ? Colors.blueGrey : Colors.grey,
+                alignment: selected
+                    ? Alignment.center
+                    : AlignmentDirectional.topCenter,
+                duration: Duration(seconds: 2),
+                curve: Curves.fastOutSlowIn,
+                child: FlutterLogo(
+                  size: 75,
                 ),
               ),
             ),

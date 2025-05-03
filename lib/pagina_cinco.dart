@@ -1,48 +1,32 @@
 import 'package:flutter/material.dart';
 
-class PantallaCinco extends StatelessWidget {
+class PantallaCinco extends StatefulWidget {
   const PantallaCinco({Key? key}) : super(key: key);
 
-  static const List<String> listItems = <String>[
-    'apple',
-    'banana',
-    'melon',
-  ];
+  @override
+  State<PantallaCinco> createState() => _PantallaCincoState();
+}
 
+class _PantallaCincoState extends State<PantallaCinco> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Pantalla Cinco',
-          style: TextStyle(
-            color: Color(0xff000000),
-            fontSize: 25.0,
-          ),
-        ),
-        backgroundColor: Color(0xffabffbd),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Autocomplete<String>(
-              optionsBuilder: (TextEditingValue textEditingValue) {
-                if (textEditingValue.text == '') {
-                  return const Iterable<String>.empty();
-                }
-                return listItems.where((String item) {
-                  return item
-                      .toLowerCase()
-                      .contains(textEditingValue.text.toLowerCase());
-                });
-              },
-              onSelected: (String item) {
-                print('The $item was selected');
-              },
+        appBar: AppBar(
+          title: const Text(
+            'AlertDialog',
+            style: const TextStyle(
+              color: Color(0xff000000),
+              fontSize: 25.0,
             ),
-            const SizedBox(height: 20),
+          ),
+          backgroundColor: Color(0xffabe0ff),
+          centerTitle: true,
+        ),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 30,
+            ),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -51,9 +35,33 @@ class PantallaCinco extends StatelessWidget {
                 child: const Text('¡Regresar!'),
               ),
             ),
+            SizedBox(
+              height: 30,
+            ),
+            Center(
+              child: ElevatedButton(
+                child: Text('Mostrar Alert Dialog'),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('Cerrar'),
+                        ),
+                      ],
+                      title: Text('Flutter Map'),
+                      contentPadding: EdgeInsets.all(20.0),
+                      content: Text('Esto es un Alert Dialog'),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
-        ),
-      ),
-    );
+        ));
   }
 }
